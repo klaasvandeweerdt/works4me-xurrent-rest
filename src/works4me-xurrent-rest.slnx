@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Works4me.Xurrent.Rest.Tests/Works4me.Xurrent.Rest.Tests.csproj" />
+  <Project Path="Works4me.Xurrent.Rest/Works4me.Xurrent.Rest.csproj" />
+</Solution>

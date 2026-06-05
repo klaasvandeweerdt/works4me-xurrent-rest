@@ -73,6 +73,18 @@ namespace Works4me.Xurrent.Rest
             CompletionTargetAt,
 
             /// <summary>
+            /// The copy note to request field.
+            /// </summary>
+            [XurrentEnum("copy_note_to_request")]
+            CopyNoteToRequest,
+
+            /// <summary>
+            /// The copy note to workflow field.
+            /// </summary>
+            [XurrentEnum("copy_note_to_workflow")]
+            CopyNoteToWorkflow,
+
+            /// <summary>
             /// The created at field.
             /// </summary>
             [XurrentEnum("created_at")]
@@ -556,6 +568,8 @@ namespace Works4me.Xurrent.Rest
         private WorkflowTaskCategory? _category;
         private ObservableCollection<string>? _checkedItems;
         private DateTime? _completionTargetAt;
+        private bool? _copyNoteToRequest;
+        private bool? _copyNoteToWorkflow;
         private DateTime? _createdAt;
         private WorkflowTask? _failureTask;
         private DateTime? _finishedAt;
@@ -692,6 +706,26 @@ namespace Works4me.Xurrent.Rest
         {
             get => _completionTargetAt;
             internal set => _completionTargetAt = value;
+        }
+
+        /// <summary>
+        /// Gets or sets wherever notes are copied as public notes to the request of the task’s workflow.
+        /// </summary>
+        [XurrentField("copy_note_to_request")]
+        public bool? CopyNoteToRequest
+        {
+            get => _copyNoteToRequest;
+            set => _copyNoteToRequest = SetValue("copy_note_to_request", _copyNoteToRequest, value);
+        }
+
+        /// <summary>
+        /// Gets or sets wherever notes are copied to the task’s workflow.
+        /// </summary>
+        [XurrentField("copy_note_to_workflow")]
+        public bool? CopyNoteToWorkflow
+        {
+            get => _copyNoteToWorkflow;
+            set => _copyNoteToWorkflow = SetValue("copy_note_to_workflow", _copyNoteToWorkflow, value);
         }
 
         /// <summary>

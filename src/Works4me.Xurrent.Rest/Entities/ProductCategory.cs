@@ -70,6 +70,36 @@ namespace Works4me.Xurrent.Rest
             Reference,
 
             /// <summary>
+            /// The review end of support days field.
+            /// </summary>
+            [XurrentEnum("review_end_of_support_days")]
+            ReviewEndOfSupportDays,
+
+            /// <summary>
+            /// The review in use since days field.
+            /// </summary>
+            [XurrentEnum("review_in_use_since_days")]
+            ReviewInUseSinceDays,
+
+            /// <summary>
+            /// The review last seen days field.
+            /// </summary>
+            [XurrentEnum("review_last_seen_days")]
+            ReviewLastSeenDays,
+
+            /// <summary>
+            /// The review license expiry days field.
+            /// </summary>
+            [XurrentEnum("review_license_expiry_days")]
+            ReviewLicenseExpiryDays,
+
+            /// <summary>
+            /// The review warranty expiry days field.
+            /// </summary>
+            [XurrentEnum("review_warranty_expiry_days")]
+            ReviewWarrantyExpiryDays,
+
+            /// <summary>
             /// The rule set field.
             /// </summary>
             [XurrentEnum("rule_set")]
@@ -221,6 +251,11 @@ namespace Works4me.Xurrent.Rest
         private string? _name;
         private Uri? _pictureUri;
         private string? _reference;
+        private int? _reviewEndOfSupportDays;
+        private int? _reviewInUseSinceDays;
+        private int? _reviewLastSeenDays;
+        private int? _reviewLicenseExpiryDays;
+        private int? _reviewWarrantyExpiryDays;
         private ProductCategoryRuleSet? _ruleSet;
         private string? _source;
         private string? _sourceID;
@@ -296,6 +331,61 @@ namespace Works4me.Xurrent.Rest
         {
             get => _reference;
             internal set => _reference = value;
+        }
+
+        /// <summary>
+        /// Gets or sets the number of days before the end-of-support date of a configuration item after which a lifecycle review is flagged.<br />
+        /// Leave empty to disable this review.
+        /// </summary>
+        [XurrentField("review_end_of_support_days")]
+        public int? ReviewEndOfSupportDays
+        {
+            get => _reviewEndOfSupportDays;
+            set => _reviewEndOfSupportDays = SetValue("review_end_of_support_days", _reviewEndOfSupportDays, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the number of days after the in-use-since date of a configuration item after which a lifecycle review is flagged.<br />
+        /// Leave empty to disable this review.
+        /// </summary>
+        [XurrentField("review_in_use_since_days")]
+        public int? ReviewInUseSinceDays
+        {
+            get => _reviewInUseSinceDays;
+            set => _reviewInUseSinceDays = SetValue("review_in_use_since_days", _reviewInUseSinceDays, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the number of days since a configuration item was last seen after which a lifecycle review is flagged.<br />
+        /// Leave empty to disable this review.
+        /// </summary>
+        [XurrentField("review_last_seen_days")]
+        public int? ReviewLastSeenDays
+        {
+            get => _reviewLastSeenDays;
+            set => _reviewLastSeenDays = SetValue("review_last_seen_days", _reviewLastSeenDays, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the number of days before the license-expiry date of a configuration item after which a lifecycle review is flagged.<br />
+        /// Leave empty to disable this review.
+        /// </summary>
+        [XurrentField("review_license_expiry_days")]
+        public int? ReviewLicenseExpiryDays
+        {
+            get => _reviewLicenseExpiryDays;
+            set => _reviewLicenseExpiryDays = SetValue("review_license_expiry_days", _reviewLicenseExpiryDays, value);
+        }
+
+        /// <summary>
+        /// Gets or sets the number of days before the warranty-expiry date of a configuration item after which a lifecycle review is flagged.<br />
+        /// Leave empty to disable this review.
+        /// </summary>
+        [XurrentField("review_warranty_expiry_days")]
+        public int? ReviewWarrantyExpiryDays
+        {
+            get => _reviewWarrantyExpiryDays;
+            set => _reviewWarrantyExpiryDays = SetValue("review_warranty_expiry_days", _reviewWarrantyExpiryDays, value);
         }
 
         /// <summary>

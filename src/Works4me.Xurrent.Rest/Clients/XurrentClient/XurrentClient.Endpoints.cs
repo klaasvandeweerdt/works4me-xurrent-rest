@@ -135,17 +135,6 @@
         }
 
         /// <summary>
-        /// Gets the <see cref="CiStagedChange"/> client.
-        /// </summary>
-        /// <remarks>
-        /// See the <see href="https://developer.xurrent.com/v1/ci_staged_changes/">Xurrent developer documentation</see> for details.
-        /// </remarks>
-        public CiStagedChangeClient CiStagedChanges
-        {
-            get => GetInternalClient<CiStagedChangeClient>();
-        }
-
-        /// <summary>
         /// Gets the <see cref="ClosureCode"/> client.
         /// </summary>
         /// <remarks>

@@ -747,7 +747,7 @@ namespace Works4me.Xurrent.Rest
         private List<Attachment>? _attachments;
         private RequestCategory? _category;
         private ObservableCollection<string>? _checkedItems;
-        private ClosureCode? _closureCode;
+        private string? _closureCode;
         private DateTime? _completedAt;
         private RequestCompletionReason? _completionReason;
         private ConfigurationItem? _configurationItem;
@@ -896,10 +896,10 @@ namespace Works4me.Xurrent.Rest
         }
 
         /// <summary>
-        /// Gets or sets the closure code of the request.
+        /// Gets or sets the reference value of the closure code of the request.
         /// </summary>
         [XurrentField("closure_code")]
-        public ClosureCode? ClosureCode
+        public string? ClosureCode
         {
             get => _closureCode;
             set => _closureCode = SetValue("closure_code", _closureCode, value);

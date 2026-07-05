@@ -84,6 +84,12 @@ namespace Works4me.Xurrent.Rest
             Id,
 
             /// <summary>
+            /// The is bundle field.
+            /// </summary>
+            [XurrentEnum("is_bundle")]
+            IsBundle,
+
+            /// <summary>
             /// The max quantity field.
             /// </summary>
             [XurrentEnum("max_quantity")]
@@ -329,6 +335,7 @@ namespace Works4me.Xurrent.Rest
         private string? _fullDescription;
         private ObservableCollection<AttachmentReference>? _fullDescriptionAttachments;
         private AttachmentReferenceWriter? _fullDescriptionAttachmentsWriter;
+        private bool? _isBundle;
         private int? _maxQuantity;
         private string? _name;
         private Uri? _pictureUri;
@@ -461,6 +468,18 @@ namespace Works4me.Xurrent.Rest
                 _fullDescriptionAttachmentsWriter ??= new AttachmentReferenceWriter(() => FullDescriptionAttachmentsCollection, c => FullDescriptionAttachmentsCollection = c);
                 return _fullDescriptionAttachmentsWriter;
             }
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the shop article is a bundle composed of other shop articles.<br />
+        /// The default value is <see langword="false"/>.<br />
+        /// This property can only be set when the shop article is created.
+        /// </summary>
+        [XurrentField("is_bundle")]
+        public bool? IsBundle
+        {
+            get => _isBundle;
+            set => _isBundle = SetValue("is_bundle", _isBundle, value);
         }
 
         /// <summary>

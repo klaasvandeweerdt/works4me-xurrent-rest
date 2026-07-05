@@ -276,6 +276,12 @@ namespace Works4me.Xurrent.Rest
             TimesApplied,
 
             /// <summary>
+            /// The translate subject field.
+            /// </summary>
+            [XurrentEnum("translate_subject")]
+            TranslateSubject,
+
+            /// <summary>
             /// The user interface extension field.
             /// </summary>
             [XurrentEnum("ui_extension")]
@@ -500,6 +506,7 @@ namespace Works4me.Xurrent.Rest
         private Team? _team;
         private string? _timeZone;
         private int? _timesApplied;
+        private bool? _translateSubject;
         private UiExtension? _uiExtension;
         private DateTime? _updatedAt;
         private bool? _urgent;
@@ -950,6 +957,17 @@ namespace Works4me.Xurrent.Rest
         {
             get => _timesApplied;
             internal set => _timesApplied = value;
+        }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether the subject of requests created from this template is automatically translated to the viewer's language.<br />
+        /// When <see langword="false"/>, the subject is always displayed in its original language.
+        /// </summary>
+        [XurrentField("translate_subject")]
+        public bool? TranslateSubject
+        {
+            get => _translateSubject;
+            set => _translateSubject = SetValue("translate_subject", _translateSubject, value);
         }
 
         /// <summary>

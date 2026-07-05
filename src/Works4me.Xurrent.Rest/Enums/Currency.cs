@@ -188,22 +188,28 @@ namespace Works4me.Xurrent.Rest
         OMR,
 
         /// <summary>
-        /// Pakistani Rupee.
-        /// </summary>
-        [XurrentEnum("pkr")]
-        PKR,
-
-        /// <summary>
         /// Philippine Peso.
         /// </summary>
         [XurrentEnum("php")]
         PHP,
 
         /// <summary>
+        /// Pakistani Rupee.
+        /// </summary>
+        [XurrentEnum("pkr")]
+        PKR,
+
+        /// <summary>
         /// Polish Zloty.
         /// </summary>
         [XurrentEnum("pln")]
         PLN,
+
+        /// <summary>
+        /// Serbian Dinar.
+        /// </summary>
+        [XurrentEnum("rsd")]
+        RSD,
 
         /// <summary>
         /// Russian Rouble.
